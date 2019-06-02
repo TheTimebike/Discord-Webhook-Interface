@@ -2,8 +2,8 @@ import discord, aiohttp, asyncio
 
 class WebhookHandler:
     def __init__(self):
-        self._last_url = ""
-        self._last_webhook = ""
+        self._last_url = None
+        self._last_webhook = None
 
     async def _start(self, url, handler):
         async with aiohttp.ClientSession() as session:

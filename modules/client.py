@@ -20,5 +20,5 @@ class Client:
     async def send(self, url, message, author):
         await self._webhook_handler._send(url, message, author, self)
 
-    async def delete(self, url):
-        await self._webhook_handler._delete(url, self)
+    def delete(self, url):
+        self._loop.run_until_complete(self._webhook_handler._delete(url, self))
