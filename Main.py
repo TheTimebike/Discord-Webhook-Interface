@@ -50,7 +50,7 @@ class Window(Frame):
 
     def change_pfp(self):
         new_img = self.get_image_from_url(self.pfp_entry_box.get('1.0', END))
-        self.pfp_preview_pannel.image = new_img
+        self.pfp_preview_pannel.config(image=new_img)
         client.edit(self.url_entry_box.get('1.0', END), requests.get(self.pfp_entry_box.get('1.0', END).replace("\n", "")).content)
 
     def get_image_from_url(self, url):
