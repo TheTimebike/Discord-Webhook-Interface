@@ -35,3 +35,9 @@ In a sense, yes. While Discord staff would still be able to compare the ip addre
 ## Does This Mean I Can Prank Without Being Caught?
 
 Yes it does. Remember that webhooks can *only* send messages, meaning that your pranking opportunities are limited somewhat.
+
+## So What Are My Pranking Opportunities?
+
+As I stated earlier, webhooks have access to certain formatting syntax that bots and other users do not. One example of this would be link formatting. While bots *can* use link formatting, it can only be inside embeds. Webhooks can use this syntax in regular messages.
+
+To use link formatting, you would type ``[Link Text](Link)``. If you are redirected to something that would auto-embed its content, remember to cancel the embed with ``< >``
