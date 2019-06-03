@@ -22,3 +22,11 @@ class WebhookHandler:
     async def _delete(self, url, handler):
         _webhook = await self._start(url, handler)
         await _webhook.delete()
+
+    async def _edit(self, url, image, handler):
+        _webhook = await self._start(url, handler)
+        await _webhook.edit(avatar=image)
+
+
+    async def get_webhook(self, url, handler):
+        return await self._start(url, handler)

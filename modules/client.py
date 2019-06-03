@@ -13,6 +13,10 @@ class Client:
     def run_event(self, event):
         self._loop.run_until_complete(self._run_event(event))
 
+    def get_info(self, url):
+        self._loop.run_until_complete(self._webhook_handler._start(url, self))
+        return self._webhook_handler._last_webhook   
+
     async def _run_event(self, event):
         function = getattr(self, event)
         await function()
@@ -22,3 +26,6 @@ class Client:
 
     def delete(self, url):
         self._loop.run_until_complete(self._webhook_handler._delete(url, self))
+
+    def edit(self, url, image):
+        self._loop.run_until_complete(self._webhook_handler._edit(url, image, self))
